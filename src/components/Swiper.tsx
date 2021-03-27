@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Dimensions} from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 import photoCards from '../utils/PhotoCards';
 import Card from './Cards';
@@ -14,6 +14,10 @@ const SwiperPage = () => {
 const handleOnSwipedLeft = () => console.log("swipeLeft");
   const handleOnSwipedTop = () => console.log('swipeTop');
   const handleOnSwipedRight = () => console.log('swipeRight');
+
+  const {width, height} = Dimensions.get('window');
+const Devicewidth = Dimensions.get('window').width;
+const Deviceheight = Dimensions.get('window').height;
 
   return (
     <>
@@ -47,7 +51,7 @@ const handleOnSwipedLeft = () => console.log("swipeLeft");
           },
         }}
       />
-      <View>
+      <View style={{flexDirection:"row",justifyContent:"space-around",marginTop:Deviceheight-70}}> 
         <IconButton
           name="close"
           onPress={handleOnSwipedLeft}

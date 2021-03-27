@@ -1,7 +1,9 @@
 import React, {FC} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import Swiper from '../components/Swiper';
+import Dashboard from '../pages/Dashboard';
+import Login from '../pages/Login';
+
 
 
 
@@ -12,9 +14,14 @@ const Routes: FC = () => {
       <Stack.Navigator screenOptions={{
     headerShown: false
   }}>
+    <Stack.Screen
+          name="Login"
+          component={Login}
+         
+        />
         <Stack.Screen
-          name="Home"
-          component={HomeScreen}
+          name="Dashboard"
+          component={Dashboard}
          
         />
       </Stack.Navigator>
@@ -24,9 +31,5 @@ const Routes: FC = () => {
 
 export default Routes;
 
-const HomeScreen = ({navigation}: {navigation: any}) => {
-  return (
-      <Swiper/>
-  );
-};
+
 
