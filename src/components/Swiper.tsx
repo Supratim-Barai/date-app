@@ -1,23 +1,24 @@
 import React, {useRef} from 'react';
-import {View, Text, Dimensions} from 'react-native';
+import {View, Text, Dimensions, StyleSheet} from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 import photoCards from '../utils/PhotoCards';
 import Card from './Cards';
 import IconButton from './IconButtons';
 import OverlayLabel from './OverlayLabel';
-const SwiperPage = () => {
-  const useSwiper = useRef(null).current;
-//   const handleOnSwipedLeft = () => useSwiper.swipeLeft();
-//   const handleOnSwipedTop = () => useSwiper.swipeTop();
-//   const handleOnSwipedRight = () => useSwiper.swipeRight();
 
-const handleOnSwipedLeft = () => console.log("swipeLeft");
-  const handleOnSwipedTop = () => console.log('swipeTop');
-  const handleOnSwipedRight = () => console.log('swipeRight');
-
-  const {width, height} = Dimensions.get('window');
+const {width, height} = Dimensions.get('window');
 const Devicewidth = Dimensions.get('window').width;
 const Deviceheight = Dimensions.get('window').height;
+
+const SwiperPage = () => {
+  const useSwiper = useRef(null).current;
+  //   const handleOnSwipedLeft = () => useSwiper.swipeLeft();
+  //   const handleOnSwipedTop = () => useSwiper.swipeTop();
+  //   const handleOnSwipedRight = () => useSwiper.swipeRight();
+
+  const handleOnSwipedLeft = () => console.log('swipeLeft');
+  const handleOnSwipedTop = () => console.log('swipeTop');
+  const handleOnSwipedRight = () => console.log('swipeRight');
 
   return (
     <>
@@ -36,14 +37,12 @@ const Deviceheight = Dimensions.get('window').height;
           left: {
             title: 'NOPE',
             element: <OverlayLabel label="NOPE" color="#E5566D" />,
-           
           },
           right: {
             title: 'LIKE',
             element: <OverlayLabel label="LIKE" color="#4CCC93" />,
             style: {
               wrapper: {
-               
                 alignItems: 'flex-start',
                 marginLeft: 30,
               },
@@ -51,7 +50,7 @@ const Deviceheight = Dimensions.get('window').height;
           },
         }}
       />
-      <View style={{flexDirection:"row",justifyContent:"space-around",marginTop:Deviceheight-70}}> 
+      <View style={styles.IconView}>
         <IconButton
           name="close"
           onPress={handleOnSwipedLeft}
@@ -76,3 +75,11 @@ const Deviceheight = Dimensions.get('window').height;
 };
 
 export default SwiperPage;
+
+const styles = StyleSheet.create({
+  IconView: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: Deviceheight - 70,
+  },
+});
