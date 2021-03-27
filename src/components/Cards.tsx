@@ -20,7 +20,7 @@ export default Card;
 
 const styles = StyleSheet.create({
   card: {
-    height: height - 300,
+    height: height-150,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
       height: 2,
     },
     shadowRadius: 6,
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.5,
     elevation: 2,
   },
   image: {
@@ -51,8 +51,7 @@ const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     fontSize: 20,
-    color: '#fff',
-    fontFamily: 'Avenir',
+    color: '#F5F5F5',
     textShadowColor: '#000',
     textShadowRadius: 10,
   },
