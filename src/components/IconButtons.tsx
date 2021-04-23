@@ -6,13 +6,15 @@ interface IconProps {
   name: string;
   backgroundColor: string;
   color: string;
-  onPress: Function;
+  onPress(): void;
 }
 
 const IconButton: FC<IconProps> = ({name, backgroundColor, color, onPress}) => (
   <TouchableOpacity
     style={[styles.singleButton, {backgroundColor}]}
-    activeOpacity={0.85}>
+    activeOpacity={0.85}
+    onPress={onPress}
+    >
     <Icon name={name} size={20} color={color} />
   </TouchableOpacity>
 );

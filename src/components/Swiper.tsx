@@ -12,9 +12,10 @@ const Deviceheight = Dimensions.get('window').height;
 
 const SwiperPage = () => {
   const useSwiper = useRef(null).current;
-  //   const handleOnSwipedLeft = () => useSwiper.swipeLeft();
-  //   const handleOnSwipedTop = () => useSwiper.swipeTop();
-  //   const handleOnSwipedRight = () => useSwiper.swipeRight();
+
+  // const handleOnSwipedLeft = () => useSwiper.swipeLeft();
+  // const handleOnSwipedTop = () => useSwiper.swipeTop();
+  // const handleOnSwipedRight = () => useSwiper.swipeRight();
 
   const handleOnSwipedLeft = () => console.log('swipeLeft');
   const handleOnSwipedTop = () => console.log('swipeTop');
@@ -50,6 +51,7 @@ const SwiperPage = () => {
           },
         }}
       />
+
       <View style={styles.IconView}>
         <IconButton
           name="close"
@@ -80,6 +82,6 @@ const styles = StyleSheet.create({
   IconView: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginTop: Deviceheight - 70,
+    marginTop: Deviceheight - 90,
   },
 });

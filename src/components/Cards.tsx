@@ -20,7 +20,7 @@ export default Card;
 
 const styles = StyleSheet.create({
   card: {
-    height: height-150,
+    height: height-180,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
