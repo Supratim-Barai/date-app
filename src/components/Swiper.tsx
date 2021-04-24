@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import {View, Text, Dimensions, StyleSheet} from 'react-native';
-import Swiper from 'react-native-deck-swiper';
+import Swiper,{SwiperProps} from 'react-native-deck-swiper';
 import photoCards from '../utils/PhotoCards';
 import Card from './Cards';
 import IconButton from './IconButtons';
@@ -11,15 +11,11 @@ const Devicewidth = Dimensions.get('window').width;
 const Deviceheight = Dimensions.get('window').height;
 
 const SwiperPage = () => {
-  const useSwiper = useRef(null).current;
+  const useSwiper:any = useRef(null);
 
-  // const handleOnSwipedLeft = () => useSwiper.swipeLeft();
-  // const handleOnSwipedTop = () => useSwiper.swipeTop();
-  // const handleOnSwipedRight = () => useSwiper.swipeRight();
-
-  const handleOnSwipedLeft = () => console.log('swipeLeft');
-  const handleOnSwipedTop = () => console.log('swipeTop');
-  const handleOnSwipedRight = () => console.log('swipeRight');
+  const handleOnSwipedLeft = () => useSwiper.current.swipeLeft();
+  const handleOnSwipedTop = () => useSwiper.current.swipeTop();
+  const handleOnSwipedRight = () => useSwiper.current.swipeRight();
 
   return (
     <>
